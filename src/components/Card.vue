@@ -12,7 +12,9 @@
       <button type="button" class=" btn btn-info">
         <a :href="htmlUrl" target="_blank">Github</a>
       </button>
-      <button type="button" class=" btn btn-success">Web</button>
+      <button v-if="homepage != null" type="button" class=" btn btn-success">
+        <a :href="homepage" target="_blank">Web</a>
+      </button>
     </div>
   </div>
 </template>
@@ -24,6 +26,7 @@ export default {
     htmlUrl: String,
     description: String,
     author: String,
+    homepage: String,
   },
 };
 </script>
