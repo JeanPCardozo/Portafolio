@@ -1,7 +1,10 @@
 <template>
   <div>
     <Header :msg="header" />
-    <Container />
+    <div class="d-flex justify-content-center">
+      <Container />
+    </div>
+
     <Footer />
   </div>
 </template>

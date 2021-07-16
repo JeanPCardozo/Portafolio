@@ -1,15 +1,19 @@
 <template>
   <div id="card" class="card">
     <h4>{{ name }}</h4>
-
-    <a :href="htmlUrl">{{ htmlUrl }}</a>
-
     <p>
       {{ description }}
     </p>
     <p>
       <strong>{{ author }}</strong>
     </p>
+    <br />
+    <div class="d-flex justify-content-around">
+      <button type="button" class=" btn btn-info">
+        <a :href="htmlUrl" target="_blank">Github</a>
+      </button>
+      <button type="button" class=" btn btn-success">Web</button>
+    </div>
   </div>
 </template>
 
