@@ -1,20 +1,32 @@
 <template>
   <div id="card" class="card">
-    <h4>Name Proyect</h4>
+    <h4>{{ name }}</h4>
+
+    <a :href="htmlUrl">{{ htmlUrl }}</a>
+
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-      suscipit, excepturi omnis qui quisquam iste.
+      {{ description }}
     </p>
-    <p><strong>Author</strong></p>
+    <p>
+      <strong>{{ author }}</strong>
+    </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    name: String,
+    htmlUrl: String,
+    description: String,
+    author: String,
+  },
+};
 </script>
 
 <style scoped>
 .card {
+  word-wrap: break-word;
   width: 250px;
   margin: 7px;
   text-align: center;
