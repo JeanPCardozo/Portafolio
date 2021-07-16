@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <h2>&copy; {{ year }} {{ author }}</h2>
+      <h3>&copy; {{ year }} {{ author }}</h3>
     </footer>
   </div>
 </template>
