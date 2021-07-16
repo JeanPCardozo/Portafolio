@@ -9,12 +9,15 @@
     </p>
     <br />
     <div class="d-flex justify-content-around">
-      <button type="button" class=" btn btn-info">
-        <a :href="htmlUrl" target="_blank">Github</a>
-      </button>
-      <button v-if="homepage != null" type="button" class=" btn btn-success">
-        <a :href="homepage" target="_blank">Web</a>
-      </button>
+      <a class="btn btn-info" :href="htmlUrl" target="_blank">Github</a>
+
+      <a
+        v-if="homepage != null"
+        class=" btn btn-success"
+        :href="homepage"
+        target="_blank"
+        >Web</a
+      >
     </div>
   </div>
 </template>
