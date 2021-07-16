@@ -8,7 +8,8 @@
       loading="lazy"
     />
     <hr />
-    <div id="cards">
+    <Loading v-if="load" />
+    <div v-else id="cards">
       <Card
         v-for="project in projects"
         :key="project.id"
@@ -23,23 +24,27 @@
 
 <script>
 import Card from "./Card.vue";
+import Loading from "./Loading.vue";
 export default {
   data: () => ({
     projects: null,
     avatar: null,
+    load: false,
   }),
   components: {
     Card,
+    Loading,
   },
   methods: {
     async getProyects() {
+      this.load = true;
       const res = await fetch(
         "https://api.github.com/users/JeanPCardozo/repos"
       );
       const data = await res.json();
       this.projects = data;
       this.avatar = this.projects[0].owner.avatar_url;
-      console.log(this.projects);
+      this.load = false;
     },
   },
   mounted() {
